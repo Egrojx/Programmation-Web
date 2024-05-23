@@ -87,6 +87,8 @@ article{
     width: 20rem;
     height: 20rem;
     border: 5px solid black;
+    box-shadow: 0 4px 8px rgba(0, 11, 9, 0.2);
+
 }
 
 #imgC{
@@ -94,4 +96,6 @@ article{
     height: 20rem;
     border: 5px solid black;
     margin-right: 20px ;
+    box-shadow: 0 4px 8px rgba(0, 11, 9, 0.2);
+
 }
