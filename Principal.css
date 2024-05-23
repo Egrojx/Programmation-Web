@@ -65,12 +65,14 @@ h2{
 
 article{
     width: 100px;
+    margin-right: 90px;
 }
 
 
 .img{
     width: 20rem;
     height:20rem;
+    
 }
 
 #imgA{
