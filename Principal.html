@@ -8,66 +8,70 @@
     <link rel="stylesheet" href="./Principal.css">
 </head>
 <body>
-    <header>
-        <h1>Les Recettes</h1>
-        <section class="filtre">
-            <label for="filtre">Les types de cuisine</label>
-            <select name="filtre" id="filtre">
-                <option value="">TOUTE</option>
-                <option value="type">desserts</option>
-                <option value="type2">Mexican</option>
-                <option value="type3">Italien</option>
-            </select>
-        </section>
-        <section>
-            <label for="filtre2">Type de plats</label>
-            <select>
-                <option value="">TOUS</option>
-                <option value="type1">Plat principal</option>
-                <option value="type2">desserts</option>
-                <option value="type3">Entree</option>
-            </select>
-        </section>
-    </header>
+    <div class="conteneur-grid">
+        <header class="conteneur-flex entete">
+            <h1>Mon Site de Recettes</h1>
+        </header>
 
-    <main>
-        
-        
-            <article>
-                <img src="images/argentinian-choripan-109514-1.jpeg" >
-                <h2>Choripan</h2>
-                <p>Le choripán est le nom donné en Argentine
-                    à un sandwich constitué d'une saucisse et d'un petit pain, 
-                    qui peut être mangé nature ou assaisonné de chimichurri, de
-                    salsa golf (es) ou de salsa criolla.
-                </p>
-            </article>
-            <article>
-                <img src="images/sous-marin-italien.jpeg" >
-                <h2>Sous marin à l'italienne</h2>
-                <p>
-                    Ce sous-marin classique est garni de jambon Forêt-Noire Deli
-                    Best, de bologne Blue Ribbon, de fromage, d'un pepperoncini
-                    crémeux et d'une salade laitue « sous-marine ».
-                </p>
-            </article>
-            <article>
-                <img src="images/0055-cari-vert-poulet.jpg" >
-                <h2>Cari vert au poulet</h2>
-                <p>
-                    Ce cari de poulet est fait avec de la coriandre, des feuilles 
-                    de lime kaffir, de la citronnelle et du lait de coco. Un 
-                    véritable voyage en Thaïlande!
-                </p>
-            </article>
-        
+        <nav class="conteneur-flex navigation">
+            <section class="filtres">
+                <label for="filtres">Les types de cuisine:</label>
+
+                <select name="filtres" id="filtres">
+                    <option value="">Tous</option>
+                    <option value="type">Argentine</option>
+                    <option value="temps">Italie</option>
+                    <option value="ingredients">Thailande</option>
+                </select>
+            </section>
+            <section>
+                <label for="filtre2">Type de plats:</label>
+                <select>
+                    <option value="">Tous</option>
+                    <option value="type1">Plat principal</option>
+                    <option value="type2">desserts</option>
+                    <option value="type3">Entree</option>
+                </select>
+            </section>
+        </nav>
+
+        <main class="conteneur-flex principal">
+                <article class="recette recetteA" >
+                    <img id="imgA" src="images/argentinian-choripan-109514-1.jpeg" class="img" >
+                    <h2>Choripan</h2>
+                    <p>Le choripán est le nom donné en Argentine
+                        à un sandwich constitué d'une saucisse et d'un petit pain, 
+                        qui peut être mangé nature ou assaisonné de chimichurri, de
+                        salsa golf (es) ou de salsa criolla.
+                    </p>
+                </article>
+                <article class="recette recetteB">
+                    <img id="imgB" src="images/sous-marin-italien.jpeg" class="img" >
+                    <h2>Sous marin à l'italienne</h2>
+                    <p>
+                        Ce sous-marin classique est garni de jambon Forêt-Noire Deli
+                        Best, de bologne Blue Ribbon, de fromage, d'un pepperoncini
+                        crémeux et d'une salade laitue « sous-marine ».
+                    </p>
+                </article>
+                <article class="recette">
+                    <img id="imgC" src="images/0055-cari-vert-poulet.jpg" class="img" >
+                    <h2>Cari vert au poulet</h2>
+                    <p>
+                        Ce cari de poulet est fait avec de la coriandre, des feuilles 
+                        de lime kaffir, de la citronnelle et du lait de coco. Un 
+                        véritable voyage en Thaïlande!
+                    </p>
+                </article>
+            
 
         </main>
 
-    <footer>
-        <p>Contact: 438-888-8888
-            <a href="mailto:recettes@hotmail.com">Email</a>
-        </p>
-    </footer>
+        <footer class="conteneur-flex pied">
+            <p>Contact: 438-888-8888
+                <a href="mailto:recettes@hotmail.com">Email</a>
+            </p>
+        </footer>
+    </div>
 </body>
 </html>
