@@ -1,8 +1,89 @@
+.conteneur-grid{
+    display: grid;
+    grid-template: 5rem 1rem 45rem 1fr/ 1fr 1fr 1fr ;
+    grid-template-areas: 
+    "entete     entete      entete"
+    "filtres    filtres     filtres"
+    "principal  principal   principal"
+    "pied       pied        pied    ";
+
+    justify-items: center;
+    align-items: center;
+    
+
+}
+.entete{
+    grid-area: entete;
+    display: flex;
+    justify-content: center;
+    background-color: lightgreen;
+    color: white;
+    width:100%;
+}
+
+.navigation{
+    grid-area: filtres;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: lightyellow;
+    color: black;
+    
+}
+
+.principal{
+    grid-area: principal;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items:end;
+    height: 30rem;
+    width: 100%;
+    
+    
+}
+
+.pied{
+    grid-area: pied;
+    display: flex;
+    justify-content: center;
+    background-color: lightgreen;
+    color: white;
+    width: 100%;
+
+}
+
+h2{
+    color: lightgreen;
+}
+
+
+
+.recette{
+    flex-basis: 10rem;
+}
+
 article{
     width: 200px;
 }
 
+
 .img{
-    width: 100%;
-    height: 100%;
+    width: 18rem;
+    height:18rem;
+}
+
+#imgA{
+    width: 24rem;
+    height: 20rem;
+}
+
+#imgB{
+    width: 20rem;
+    height: 20rem;
+}
+
+#imgC{
+    width: 24rem;
+    height: 20rem;
 }
