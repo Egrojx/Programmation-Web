@@ -76,14 +76,17 @@ article{
 #imgA{
     width: 24rem;
     height: 20rem;
+    border: 5px solid black;
 }
 
 #imgB{
     width: 20rem;
     height: 20rem;
+    border: 5px solid black;
 }
 
 #imgC{
     width: 24rem;
     height: 20rem;
+    border: 5px solid black;
 }
