@@ -75,12 +75,18 @@ article{
     width: 200rem;
     margin-right: 90px;
 }
-[class^=recetteA]{
-    background-color: #fff; 
+.recette{
+    background-color: #e8e1e1; 
     padding: 20px; 
     border: 1px solid #ccc; 
     max-width: 600px; 
     margin: 20px auto; 
+}
+
+.recette image {
+    max-width: 100%; /* Assure que l'image ne dépasse pas la largeur du bloc */
+    display: block; /* Assure que l'image est bien alignée */
+    margin-bottom: 10px; /* Espace sous l'image */
 }
 
 .img{
