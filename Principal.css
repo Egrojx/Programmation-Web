@@ -75,7 +75,13 @@ article{
     width: 200rem;
     margin-right: 90px;
 }
-
+[class^=recetteA]{
+    background-color: #fff; 
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    max-width: 600px; 
+    margin: 20px auto; 
+}
 
 .img{
     width: 20rem;
