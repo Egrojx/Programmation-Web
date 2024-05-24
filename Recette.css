@@ -17,27 +17,89 @@
 .entete{
     grid-area: entete;
     display: flex;
-    padding: 20rem;
     justify-content: center;
     background-color: rgb(86, 7, 24);
     color: rgb(255, 255, 255);
     width:100%;
 }
 
-
-
-
-
-.navigation {
+.navigation{
+    grid-area: filtres;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #e8b7b7;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: rgb(243, 191, 197);
+    color: black;
+  
 }
 
 .navigation section {
     margin: 10px;
+}
+
+.principal {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "filters filters"
+        "recette recette"
+        "footer footer";
+    gap: 1rem;
+    justify-content: space-evenly;
+    align-items: end;
+    height: 30rem;
+    width: 100%;
+}
+
+.recette-header img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-left: 10rem;
+}
+
+.recette-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: right;
+}
+
+h2 {
+    margin-top: 0;
+    color: rgb(88, 19, 19);
+    margin: 5px;
+}
+
+.tableau h2{
+    margin-left: 30px;
+}
+
+.pied{
+    grid-area: pied;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(86, 7, 24);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 10px;
+    margin-top: 40rem;
+}
+
+.tableau {
+    width: 100%;
+    border-collapse: collapse;
+        margin-top: 15px;
+}
+
+.tableau th, .tableau td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tableau th {
+    background-color: #f2f2f2;
 }
 
  .Etape {
@@ -45,12 +107,9 @@
 }
 
 
-.pied {
-    background-color: rgb(86, 7, 24);
-    color: white;
-    text-align: center;
-    margin: 10px;
-}
+
+
+
 
 
 
