@@ -64,7 +64,6 @@
 
 .principal{
     display: flex;
-    flex-basis: 10rem;
     
 }
 
@@ -77,12 +76,10 @@
     border: 1px solid #ddd;
     padding: 5px;
     text-align: left;
-    flex-basis: 10rem;
 }
 
 .tableau th {
     background-color: #f2f2f2dc;
-    flex-basis: 10rem;
 }
 
 
