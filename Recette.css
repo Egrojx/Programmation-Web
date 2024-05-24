@@ -14,6 +14,13 @@
 
 }
 
+body {
+    background-image: url('images/ecran.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+}
+
 .entete{
     grid-area: entete;
     display: flex;
@@ -71,9 +78,6 @@ h2 {
     margin: 5px;
 }
 
-.tableau h2{
-    margin-left: 30px;
-}
 
 .pied{
     grid-area: pied;
@@ -88,21 +92,32 @@ h2 {
 
 .tableau {
     width: 100%;
-    border-collapse: collapse;
-        margin-top: 15px;
+    border-radius: collapse;
+    margin-top: 15px;
 }
 
 .tableau th, .tableau td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+
 }
 
-.tableau th {
-    background-color: #f2f2f2;
-}
 
  .Etape {
+    background-color: #f5efef; 
+    padding: 20px 20px; 
+    border: 1px solid #ccc; 
+    max-width: 600px; 
+    margin-left: 30px;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    margin-top: 12px auto; 
+    border: 2px solid #514f4f;
+    border-radius: 10px;
+    display: block;
     margin-top: 20px;
 }
 
