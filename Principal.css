@@ -76,11 +76,13 @@ article{
     margin-right: 90px;
 }
 .recette{
-    background-color: #e8e1e1; 
+    background-color: #f5efef; 
     padding: 20px; 
     border: 1px solid #ccc; 
     max-width: 600px; 
     margin: 20px auto; 
+    border: 2px solid #262525;
+    border-radius: 10px;
 }
 
 .recette image {
