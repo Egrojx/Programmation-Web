@@ -1,12 +1,31 @@
 .conteneur-grid{
     display: grid;
-    grid-template: 1rem 1rem 1rem 1fr/ 1fr 1fr 1fr ;
-    grid-template-areas: 
+    grid-template-rows: 5fr 5fr 5fr;
+    grid-template-columns: 1fr 1fr 10rem
     "entete2     entete2      entete2"
-    "filtres2   filtres2     filtres2"
+    "filtres2    filtres2     filtres2"
     "principal2  principal2   principal2"
     "pied2       pied2        pied2    ";
 
-    justify-items: center;
+    justify-item: center;
     align-items: center;
+}
+
+.entete{
+    grid-area: entete2;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(86, 7, 24);
+    color: rgb(255, 255, 255);
+    width:100%;
+}
+
+.navigation{
+    grid-area: filtres2;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: rgb(243, 191, 197);
+    color: black;
+    
 }
