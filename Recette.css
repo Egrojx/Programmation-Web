@@ -1,4 +1,12 @@
-img{
-    width: 50%;
-    height: 50%;
+.conteneur-grid{
+    display: grid;
+    grid-template: 1rem 1rem 1rem 1fr/ 1fr 1fr 1fr ;
+    grid-template-areas: 
+    "entete2     entete2      entete2"
+    "filtres2   filtres2     filtres2"
+    "principal2  principal2   principal2"
+    "pied2       pied2        pied2    ";
+
+    justify-items: center;
+    align-items: center;
 }
