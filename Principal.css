@@ -16,8 +16,8 @@
     grid-area: entete;
     display: flex;
     justify-content: center;
-    background-color: lightgreen;
-    color: rgb(121, 14, 14);
+    background-color: rgb(86, 7, 24);
+    color: rgb(255, 255, 255);
     width:100%;
 }
 
@@ -26,7 +26,7 @@
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    background-color: lightyellow;
+    background-color: rgb(243, 191, 197);
     color: black;
     
 }
@@ -48,7 +48,7 @@
     display: flex;
     justify-content: center;
     background-color: rgb(86, 7, 24);
-    color: rgb(237, 229, 229);
+    color: rgb(255, 255, 255);
     width: 100%;
 
 }
