@@ -5,40 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./normalize.css">
-    <link rel="stylesheet" href="./Recette.css">
+    <link rel="stylesheet" href="./Principal.css">
 </head>
 <body>
-  <div class="conteneur-grid">  
-     <header class="conteneur-flex entete">
-        <h1>Mon site de Recettes</h1>
-     </header>
+    <div class="conteneur-grid">
+        <header class="conteneur-flex entete">
+            <h1>Mon Site de Recettes</h1>
+        </header>
 
-     <nav class="conteneur-flex navigation">
-        <section class="filtres">
-            <label for="filtres">Les types de cuisine</label>
-            <select name="filtres" id="filtres">
-                <option value="">TOUTE</option>
-                <option value="type">desserts</option>
-                <option value="type2">Mexican</option>
-                <option value="type3">Italien</option>
-            </select>
-        </section>
-        <section>
-            <label for="filtre2">Type de plats</label>
-            <select>
-                <option value="">TOUS</option>
-                <option value="type1">Plat principal</option>
-                <option value="type2">desserts</option>
-                <option value="type3">Entree</option>
-            </select>
-        </section>
-    </nav>
+        <nav class="conteneur-flex navigation">
+            <section class="filtres">
+                <label for="filtres">Les types de cuisine:</label>
 
-  
+                <select name="filtres" id="filtres">
+                    <option value="">Tous</option>
+                    <option value="type">Argentine</option>
+                    <option value="temps">Italie</option>
+                    <option value="ingredients">Thailande</option>
+                </select>
+            </section>
+            <section>
+                <label for="filtre2">Type de plats:</label>
+                <select>
+                    <option value="">Tous</option>
+                    <option value="type1">Plat principal</option>
+                    <option value="type2">desserts</option>
+                    <option value="type3">Entree</option>
+                </select>
+            </section>
+        </nav>
 
 
-    <main classe ="conteneur-flex principal">
-        <img src="images/argentinian-choripan-109514-1.jpeg">
+
+        <main class="recipe-main">
+            <div class="recipe-header">
+                <img img src="images/argentinian-choripan-109514-1.jpeg" alt="Image de la recette">
+                <div class="recipe-details">
+                    <h2>Choripan argentinian</h2>
+                    <p>Type de plat: Plat principal</p>
+                    <p>Type de cuisine: Argentine</p>
+                    <p>Temps de préparation: 30 minutes</p>
+                </div>
+
         <table class="tableau">
             <thead>
                 <tr>
