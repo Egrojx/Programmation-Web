@@ -1,27 +1,31 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-.conteneur-grid {
+.conteneur-grid{
     display: grid;
-    grid-template-columns: 1fr; 
-    grid-template-rows: auto auto 1fr auto; 
-    min-height: 100vh; 
+    grid-template: 5rem 1rem 45rem 1fr/ 1fr 1fr 1fr ;
+    grid-template-areas: 
+    "entete     entete      entete"
+    "filtres    filtres     filtres"
+    "principal  principal   principal"
+    "pied       pied        pied    ";
+
+    justify-items: center;
+    align-items: center;
+    
+
 }
 
-
-.entete {
+.entete{
+    grid-area: entete;
+    display: flex;
+    padding: 20rem;
+    justify-content: center;
     background-color: rgb(86, 7, 24);
-    color: white;
-    padding: 20px;
-    text-align: center;
-    grid-column: 1;
-    grid-row: 1;
+    color: rgb(255, 255, 255);
+    width:100%;
 }
+
+
+
 
 
 .navigation {
@@ -30,58 +34,11 @@
     align-items: center;
     padding: 10px;
     background-color: #e8b7b7;
-    grid-column: 1;
-    grid-row: 2;
-    margin: 10px;
 }
 
 .navigation section {
     margin: 10px;
 }
-
-
-.principal {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto 1fr; 
-    gap: 20px;
-    padding: 20px;
-    grid-column: 1;
-    grid-row: 3;
-}
-/*
-.conteneur-flex.principal .left-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}*/
-
-.principal img {
-    max-width: 100%;
-    height: 45rem;
-    
-}
-
-.principal{
-    display: flex;
-    
-}
-
-.tableau {
-    width: 100%;
-    border-radius:10px;
-}
-
-.tableau th, .tableau td {
-    border: 1px solid #ddd;
-    padding: 5px;
-    text-align: left;
-}
-
-.tableau th {
-    background-color: #f2f2f2dc;
-}
-
 
  .Etape {
     margin-top: 20px;
@@ -92,7 +49,7 @@
     background-color: rgb(86, 7, 24);
     color: white;
     text-align: center;
-    padding: 10px;
+    margin: 10px;
 }
 
 
