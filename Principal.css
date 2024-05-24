@@ -81,14 +81,14 @@ article{
     border: 1px solid #ccc; 
     max-width: 600px; 
     margin: 20px auto; 
-    border: 2px solid #262525;
+    border: 2px solid #514f4f;
     border-radius: 10px;
 }
 
 .recette image {
-    max-width: 100%; /* Assure que l'image ne dépasse pas la largeur du bloc */
-    display: block; /* Assure que l'image est bien alignée */
-    margin-bottom: 10px; /* Espace sous l'image */
+    max-width: 100%; 
+    display: block; 
+    margin-bottom: 10px; 
 }
 
 .img{
