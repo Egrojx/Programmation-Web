@@ -12,6 +12,14 @@
     
 
 }
+
+body {
+    background-image: url('images/sous-marin-italien.jpeg');
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+}
+
 .entete{
     grid-area: entete;
     display: flex;
