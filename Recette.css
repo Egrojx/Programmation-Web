@@ -14,12 +14,6 @@
 
 }
 
-body {
-    background-image: url('images/ecran.jpg');
-    background-size: cover; 
-    background-position: center;
-    background-attachment: fixed;
-}
 
 .entete{
     grid-area: entete;
@@ -29,6 +23,14 @@ body {
     color: rgb(255, 255, 255);
     width:100%;
 }
+
+body {
+    background-image: url('images/ecran.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+}
+
 
 .navigation{
     grid-area: filtres;
@@ -43,39 +45,58 @@ body {
 .navigation section {
     margin: 10px;
 }
-
+body{
+    color: #873232;
+}
 .principal {
     display: grid;
     grid-template-areas: 
         "header header"
         "filters filters"
-        "recette recette"
+        "recipe recipe"
         "footer footer";
     gap: 1rem;
     justify-content: space-evenly;
-    align-items: end;
+    align-items: start;
     height: 30rem;
     width: 100%;
+    margin-left: 100px;
 }
 
 .recette-header img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        margin-left: 10rem;
+    width:100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.description-plat {
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    justify-content:start;
+    flex-grow: 10;
+    background-color: #945858;
+    border: 1px solid #190a0ad0;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
 }
 
 .recette-details {
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    width: 100%;
+    margin-left: 30px;
+    justify-content: space-between;
     text-align: right;
+    margin-left: 15rem;
 }
 
 h2 {
     margin-top: 0;
     color: rgb(88, 19, 19);
-    margin: 5px;
+    margin: 15px;
 }
 
 
