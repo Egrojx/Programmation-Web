@@ -1,7 +1,6 @@
-
 .conteneur-grid{
     display: grid;
-    grid-template: 5rem 1rem 45rem 1fr/ 1fr 1fr 1fr ;
+    grid-template: 5rem 1rem 7rem 1fr/ 1fr 1fr 1fr ;
     grid-template-areas: 
     "entete     entete      entete"
     "filtres    filtres     filtres"
@@ -39,33 +38,26 @@ body {
     width: 100%;
     background-color: rgb(243, 191, 197);
     color: black;
+   
   
 }
 
 .navigation section {
     margin: 10px;
 }
-body{
-    color: #873232;
-}
+
 .principal {
-    display: grid;
-    grid-template-areas: 
-        "header header"
-        "filters filters"
-        "recipe recipe"
-        "footer footer";
-    gap: 1rem;
-    justify-content: space-evenly;
-    align-items: start;
-    height: 30rem;
-    width: 100%;
-    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    
+   
 }
 
-.recette-header img {
-    width:100%;
-    height: auto;
+.description-plat img {
+    width: 42rem;
+    height:35rem;
     border-radius: 10px;
 }
 
@@ -74,29 +66,28 @@ body{
     width: 80%;
     flex-direction: row;
     justify-content:start;
-    flex-grow: 10;
-    background-color: #945858;
-    border: 1px solid #190a0ad0;
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 300px;
-    text-align: center;
+    margin-bottom: 3rem;
+    font-size: large;
+    
 }
 
 .recette-details {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    margin-left: 30px;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
-    margin-left: 15rem;
+    
+    width: 50rem;
+    
+    
+    border-radius: 10px;
 }
 
 h2 {
-    margin-top: 0;
+    font-size: xx-large;
     color: rgb(88, 19, 19);
     margin: 15px;
+    text-decoration: underline;
 }
 
 
@@ -108,13 +99,13 @@ h2 {
     color: rgb(255, 255, 255);
     width: 100%;
     padding: 10px;
-    margin-top: 40rem;
+     
 }
 
 .tableau {
-    width: 100%;
+    width: 50%;
     border-radius: collapse;
-    margin-top: 15px;
+    margin-bottom: 5rem;
 }
 
 .tableau th, .tableau td {
@@ -123,6 +114,7 @@ h2 {
     text-align: left;
     background-color: #f2f2f2;
     border-radius: 10px;
+    
 
 }
 
@@ -131,16 +123,33 @@ h2 {
     background-color: #f5efef; 
     padding: 20px 20px; 
     border: 1px solid #ccc; 
-    max-width: 600px; 
+    width: 80%;
     margin-left: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 10rem;
     margin-right: 0px;
     margin-top: 12px auto; 
     border: 2px solid #514f4f;
     border-radius: 10px;
     display: block;
-    margin-top: 20px;
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
