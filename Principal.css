@@ -1,6 +1,6 @@
 .conteneur-grid{
     display: grid;
-    grid-template: 5rem 1rem 45rem 1fr/ 1fr 1fr 1fr ;
+    grid-template: 5rem 1rem 50rem 1fr/ 1fr 1fr 1fr ;
     grid-template-areas: 
     "entete     entete      entete"
     "filtres    filtres     filtres"
@@ -29,6 +29,9 @@ body {
     width:100%;
 }
 
+navigation section {
+    margin: 10px;
+}
 .navigation{
     grid-area: filtres;
     display: flex;
