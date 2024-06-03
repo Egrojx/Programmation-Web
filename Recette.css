@@ -1,18 +1,17 @@
 .conteneur-grid{
     display: grid;
-    grid-template-rows: 5rem auto 1fr 3rem;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template: 5rem 1rem auto 1fr/ 1fr 1fr 1fr ;
     grid-template-areas: 
-    "entete2     entete2      entete2"
-    "filtres2    filtres2     filtres2"
-    "principal2  principal2   principal2"
+    "entete     entete      entete"
+    "filtres    filtres     filtres"
+    "principal  principal   principal"
     "pied       pied        pied    ";
 
     justify-items: center;
-    align-items: center;
-    min-height: 100vh;
+    align-items: center;    
 
 }
+
 
 
 .entete2{
@@ -72,6 +71,7 @@ body {
     height:26rem;
     border-radius: 10px;
     border: 10px solid   rgb(243, 191, 197); 
+    margin-top: 5rem;
     
 }
 
@@ -119,13 +119,8 @@ body {
      
 }
 
-.tableau {
-    width: 50%;
-    border-radius: collapse;
-    margin-bottom: 5rem;
-}
 
-.tableau th, .tableau td {
+.tableau2 th, .tableau2 td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
@@ -181,6 +176,7 @@ article{
 
 .recette image {
     max-width: 100%; 
+    height: auto;
     display: block; 
     margin-bottom: 10px; 
 }
