@@ -3,17 +3,16 @@ html{
 }
 .conteneur-grid{
     display: grid;
-    grid-template-rows: 5rem auto 1fr 3rem;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template: 5rem 10rem auto 1fr/ 1fr 1fr 1fr ;
     grid-template-areas: 
-    "entete2     entete2      entete2"
+    "entete2     entete2     entete2"
     "filtres2    filtres2     filtres2"
     "principal2  principal2   principal2"
     "pied       pied        pied    ";
 
     justify-items: center;
     align-items: center;
-    min-height: 100vh;
+    
 
 }
 
@@ -24,7 +23,7 @@ body {
     background-attachment: fixed;
 }
 
-.entete{
+.entete2{
     grid-area: entete2;
     display: flex;
     justify-content: center;
@@ -33,7 +32,7 @@ body {
     width:100%;
 }
 
-.navigation{
+.navigation2{
     grid-area: filtres2;
     display: flex;
     justify-content: space-evenly;
@@ -41,11 +40,11 @@ body {
     background-color: rgb(243, 191, 197);
     color: black;
     padding: 0.5rem 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8rem;
 }
 
-.principal{
-    grid-area: principal;
+.principal2{
+    grid-area: principal2;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -75,7 +74,9 @@ h2{
 }
 
 article{
-    width: 200rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    width: 200px;
     margin-right: 90px;
 }
 
@@ -98,16 +99,10 @@ article{
     margin-bottom: 10px; 
 }
 
-.img{
-    width: 20rem;
-    height:20rem;
-   max-width: 20rem;
-   height: auto;
-}
 
-#lesImages{
-    width: 24rem;
-    height: 20rem;
+.lesImages{
+    width: 10rem;
+    height: 5rem;
     border: 5px solid black;
     margin-right: 20px;
     box-shadow: 0 4px 8px rgba(0, 11, 9, 0.2);
