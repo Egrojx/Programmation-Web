@@ -103,28 +103,11 @@ article{
    
 }
 
-#imgA{
+#lesImages{
     width: 24rem;
     height: 20rem;
     border: 5px solid black;
     margin-right: 20px;
-    box-shadow: 0 4px 8px rgba(0, 11, 9, 0.2);
-    border-radius: 10px;
-}
-
-#imgB{
-    width: 20rem;
-    height: 20rem;
-    border: 5px solid black;
-    box-shadow: 0 4px 8px rgba(0, 11, 9, 0.2);
-    border-radius: 10px;
-}
-
-#imgC{
-    width: 24rem;
-    height: 20rem;
-    border: 5px solid black;
-    margin-right: 20px ;
     box-shadow: 0 4px 8px rgba(0, 11, 9, 0.2);
     border-radius: 10px;
 }
