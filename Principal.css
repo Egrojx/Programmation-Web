@@ -1,14 +1,17 @@
+html{
+    /*font-size: 62.5%;*/
+}
 .conteneur-grid{
     display: grid;
-    grid-template: 5rem 1rem 50rem 1fr/ 1fr 1fr 1fr ;
+    grid-template: 5rem auto auto 3rem/ 1fr 1fr 1fr ;
     grid-template-areas: 
     "entete     entete      entete"
     "filtres    filtres     filtres"
     "principal  principal   principal"
     "pied       pied        pied    ";
 
-    justify-items: center;
-    align-items: center;
+    /*justify-items: center;
+    align-items: center;*/
     
 
 }
@@ -29,9 +32,6 @@ body {
     width:100%;
 }
 
-navigation section {
-    margin: 10px;
-}
 .navigation{
     grid-area: filtres;
     display: flex;
@@ -39,7 +39,8 @@ navigation section {
     width: 100%;
     background-color: rgb(243, 191, 197);
     color: black;
-  
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
 }
 
 .principal{
@@ -48,7 +49,6 @@ navigation section {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items:end;
-    height: 30rem;
     width: 100%;  
     
 }
@@ -100,7 +100,8 @@ article{
 .img{
     width: 20rem;
     height:20rem;
-   
+   max-width: 20rem;
+   height: auto;
 }
 
 #imgA{
@@ -128,3 +129,4 @@ article{
     box-shadow: 0 4px 8px rgba(0, 11, 9, 0.2);
     border-radius: 10px;
 }
+
