@@ -23,7 +23,7 @@
 }
 
 body {
-    background-image: url('images/ecran.jpg');
+    background-image: url("images/ecran.jpg");
     background-size: cover; 
     background-position: center;
     background-attachment: fixed;
@@ -35,12 +35,20 @@ body {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    background-color: rgb(243, 191, 197);
+    background-color:  rgb(243, 191, 197);
     color: black;
    
   
 }
+<<<<<<< HEAD
 
+=======
+/*
+.navigation section {
+    margin: 10px;
+}
+*/
+>>>>>>> 865d0e5313b6ba97aff20f5e26d695aeb2b8dc2f
 
 .navigation2 section {
     margin: 10px;
@@ -56,19 +64,19 @@ body {
    
 }
 
-.description-plat img {
-    width: 42rem;
-    height:35rem;
-    border-radius: 10px;
+.description-plat{
+    display: flex;
+    flex-direction: row;
+    justify-items: space-between;
+    margin-bottom: 5rem;
+
 }
 
-.description-plat {
-    display: flex;
-    width: 80%;
-    flex-direction: row;
-    justify-content:start;
-    margin-bottom: 3rem;
-    font-size: large;
+.description-plat img{
+    width: 34rem;
+    height:26rem;
+    border-radius: 10px;
+    border: 10px solid   rgb(243, 191, 197); 
     
 }
 
@@ -78,17 +86,37 @@ body {
     justify-content: center;
     text-align: center;
     
-    width: 50rem;
+    width: 20rem;
     
     
     border-radius: 10px;
+    color: white;
+    
+    font-size: large;
+    margin-left: 5rem;
+    
+    
+    
+    
+   
 }
 
+<<<<<<< HEAD
 .titrePlat {
+=======
+
+
+
+h2 {
+>>>>>>> 865d0e5313b6ba97aff20f5e26d695aeb2b8dc2f
     font-size: xx-large;
-    color: rgb(208, 157, 157);
+    color: white;
     margin: 15px;
     text-decoration: underline;
+    color: rgb(86, 7, 24);
+    border-radius: 10px;
+    background-color:rgb(243, 191, 197);
+    
 }
 
 
@@ -183,6 +211,23 @@ article{
     box-shadow: 0 4px 8px rgba(0, 11, 9, 0.2);
     border-radius: 10px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
