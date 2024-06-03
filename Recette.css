@@ -1,21 +1,30 @@
+html{
+    /*font-size: 62.5%;*/
+}
 .conteneur-grid{
     display: grid;
-    grid-template: 5rem 1rem auto 1fr/ 1fr 1fr 1fr ;
+    grid-template: 5rem 10rem auto 1fr/ 1fr 1fr 1fr ;
     grid-template-areas: 
-    "entete     entete      entete"
-    "filtres    filtres     filtres"
-    "principal  principal   principal"
+    "entete2     entete2     entete2"
+    "filtres2    filtres2     filtres2"
+    "principal2  principal2   principal2"
     "pied       pied        pied    ";
 
     justify-items: center;
-    align-items: center;    
+    align-items: center;
+    
 
 }
 
-
+body {
+    background-image: url('images/ecran.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+}
 
 .entete2{
-    grid-area: entete;
+    grid-area: entete2;
     display: flex;
     justify-content: center;
     background-color: rgb(86, 7, 24);
@@ -23,25 +32,22 @@
     width:100%;
 }
 
+.navigation2{
+    grid-area: filtres2;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: rgb(243, 191, 197);
+    color: black;
+    padding: 0.5rem 0;
+    margin-bottom: 8rem;
+}
+
 body {
     background-image: url("images/ecran.jpg");
     background-size: cover; 
     background-position: center;
     background-attachment: fixed;
-}
-
-
-.navigation2{
-    grid-area: filtres;
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    background-color:  rgb(243, 191, 197);
-    color: black;
-    padding: 0.5rem 0;
-    margin-bottom: 0.5rem;
-   
-  
 }
 
 .navigation2 section {
@@ -70,23 +76,18 @@ body {
     width: 34rem;
     height:26rem;
     border-radius: 10px;
-    border: 10px solid   rgb(243, 191, 197); 
-    margin-top: 5rem;
-    
+    border: 10px solid   rgb(243, 191, 197);     
 }
 
-.recette-details {
+.recepie-details {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     
     width: 20rem;
-    
-    
     border-radius: 10px;
     color: white;
-    
     font-size: large;
     margin-left: 5rem;
     
