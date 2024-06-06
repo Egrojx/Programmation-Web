@@ -1,3 +1,4 @@
+
 function afficher_resume_recette(recette) {
   
   const recetteDiv = document.createElement('div');
@@ -9,7 +10,7 @@ function afficher_resume_recette(recette) {
   recetteDiv.appendChild(imageElement);
 
   
-  const titreElement = document.createElement('h3');
+  const titreElement = document.createElement('h2');
   titreElement.textContent = recette.titre;
   recetteDiv.appendChild(titreElement);
 
@@ -77,7 +78,7 @@ tempsPreparationElement.textContent = `⏰ Temps de préparation: ${recette.temp
 
   
   etapesList.innerHTML = '';
-  
+
   const h2 = document.createElement('h2');
     h2.textContent = "Préparation";
     etapesList.appendChild(h2);
