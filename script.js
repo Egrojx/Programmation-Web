@@ -51,7 +51,7 @@ function afficher_recette(recette, types_cuisines, types_plats) {
   const imageElement = document.querySelector('#image_url');
   const typePlatElement = document.querySelector('#type_de_plat');
   const typeCuisineElement = document.querySelector('#type_de_cuisine');
-  const tempsPreparationElement = document.querySelector('#temps_preparation');
+  const tempsPreparationElement = document.querySelector('#temps_de_preparation');
   const ingredientsTable = document.querySelector('#ingredient-table');
   const etapesList = document.querySelector('.Etape');
 
@@ -61,11 +61,7 @@ function afficher_recette(recette, types_cuisines, types_plats) {
   typePlatElement.innerHTML = `&#x1F374; Type de plat: ${types_plats[recette.type_de_plat-1].nom}`;
   typeCuisineElement.innerHTML = `&#x1F354; Type de cuisine: ${types_cuisines[recette.type_de_cuisine-1].nom}`;
 
-  
-const tempsPreparationMinutes = parseInt(recette.temps_de_preparation);
-
-
-tempsPreparationElement.textContent = `⏰ Temps de préparation: ${tempsPreparationMinutes} minutes`;
+tempsPreparationElement.textContent = `⏰ Temps de préparation: ${recette.temps_de_preparation}`;
  
 
   ingredientsTable.innerHTML = '';
@@ -103,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (recetteAfficher) {
     afficher_recette(recetteAfficher, types_cuisines, types_plats);
-  } 
+  }
 });
 
 
