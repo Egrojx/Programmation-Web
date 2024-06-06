@@ -170,18 +170,6 @@ article{
     border-radius: 10px;
 }
 
-.recette image {
-    max-width: 100%; 
-    height: auto;
-    display: block; 
-    margin-bottom: 10px; 
-}
-
-.img{
-    width: 20rem;
-    height:20rem;
-   
-}
 
 img {
     max-width: 100%; 
@@ -199,17 +187,20 @@ img {
     object-fit: cover; /* Cette propriété permet de redimensionner l'image tout en conservant son ratio */
   }
 
-.lesImages{
-    width: 24rem;
-    height: 20rem;
-    border: 5px solid black;
-    margin-right: 20px;
-    box-shadow: 0 4px 8px rgba(0, 11, 9, 0.2);
-    border-radius: 10px;
-}
 
 
-/**************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
