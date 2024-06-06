@@ -1,6 +1,3 @@
-html{
-    /*font-size: 62.5%;*/
-}
 .conteneur-grid{
     display: grid;
     grid-template: 5rem 10rem auto 1fr/ 1fr 1fr 1fr ;
@@ -50,9 +47,7 @@ body {
     background-attachment: fixed;
 }
 
-.navigation2 section {
-    margin: 10px;
-}
+
 
 .principal2 {
     grid-area: principal2;
@@ -188,6 +183,22 @@ article{
    
 }
 
+img {
+    max-width: 100%; 
+    height: auto;
+    display: block; 
+    margin-bottom: 10px; 
+
+
+    border: 5px solid black;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 11, 9, 0.2);
+    border-radius: 10px;
+    width: 36rem; /* Définissez la largeur souhaitée */
+    height: 26rem; /* Définissez la hauteur souhaitée */
+    object-fit: cover; /* Cette propriété permet de redimensionner l'image tout en conservant son ratio */
+  }
+
 .lesImages{
     width: 24rem;
     height: 20rem;
@@ -198,9 +209,7 @@ article{
 }
 
 
-
-
-
+/**************************************************************************/
 
 
 
