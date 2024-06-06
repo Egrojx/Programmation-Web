@@ -185,29 +185,40 @@ const recettes = [
     }
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
-    afficher_toutes_recettes(recettes);
-});
-
 function afficher_resume_recette(recette) {
-    const mainElement = document.querySelector('main.principal2');
+    const main = document.querySelector('main');
     const article = document.createElement('article');
     article.classList.add('recette');
-    article.innerHTML = `
-        <img class="lesImages" src="${recette.image_url}" alt="${recette.titre}">
-        <h2>${recette.titre}</h2>
-        <p>${recette.desc_courte}</p>
-    `;
+
+    const img = document.createElement('img');
+    img.classList.add('lesImages');
+    img.src = recette.image;
+    article.appendChild(img);
+
+    const h2 = document.createElement('h2');
+    h2.textContent = recette.titre;
+    article.appendChild(h2);
+
+    const p = document.createElement('p');
+    p.textContent = recette.description;
+    article.appendChild(p);
+
     article.addEventListener('click', () => {
         window.location.href = `./recette.html?id=${recette.id}`;
     });
-    mainElement.appendChild(article);
+
+    main.appendChild(article);
 }
 
 function afficher_toutes_recettes(recettes) {
-    const mainElement = document.querySelector('main.principal2');
-    mainElement.innerHTML = ''; // Clear existing recipes
-    recettes.forEach(recette => {
-        afficher_resume_recette(recette);
-    });
+    recettes.forEach(recette => afficher_resume_recette(recette));
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            afficher_toutes_recettes(data.recettes);
+        })
+        .catch(error => console.error('Error loading data:', error));
+});
