@@ -77,7 +77,13 @@ tempsPreparationElement.textContent = `⏰ Temps de préparation: ${recette.temp
 
   
   etapesList.innerHTML = '';
+  
+  const h2 = document.createElement('h2');
+    h2.textContent = "Préparation";
+    etapesList.appendChild(h2);
+
   recette.etapes_de_preparation.forEach(etape => {
+    
     const li = document.createElement('li');
     li.textContent = etape;
     etapesList.appendChild(li);
@@ -101,5 +107,4 @@ document.addEventListener('DOMContentLoaded', () => {
     afficher_recette(recetteAfficher, types_cuisines, types_plats);
   }
 });
-
 
