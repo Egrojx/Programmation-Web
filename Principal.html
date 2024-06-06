@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="./normalize.css">
     <link rel="stylesheet" href="./Recette.css">
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="conteneur-grid">
@@ -16,7 +18,7 @@
         <nav class="conteneur-flex navigation2">
             <section class="filtres2">
                 <label for="filtres">Les types de cuisine:</label>
-                <select name="filtres" id="filtres">
+                <select name="filtres" id="type-cuisine">
                     <option value="">Tous</option>
                     <option value="1">Indienne</option>
                     <option value="2">Américaine</option>
@@ -31,7 +33,7 @@
             </section>
             <section>
                 <label for="filtre2">Type de plats:</label>
-                <select id="filtre2">
+                <select id="type-plat">
                     <option value="">Tous</option>
                     <option value="1">Plat principal</option>
                     <option value="2">Salade</option>
@@ -44,7 +46,7 @@
             </section>
         </nav>
 
-        <main class="conteneur-flex principal2">
+        <main class="conteneur-flex principal2" id="recette-container">
                 <article class="recette recetteA" >
                     <img class="lesImages" src="images/argentinian-choripan-109514-1.jpeg" class="img" >
                     <h2>Choripan</h2>
@@ -82,7 +84,5 @@
             </p>
         </footer>
     </div>
-    <script src="./Data.js"></script>
 </body>
 </html>
-
