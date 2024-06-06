@@ -1,4 +1,3 @@
-
 function afficher_resume_recette(recette) {
   
   const recetteDiv = document.createElement('div');
@@ -70,8 +69,8 @@ tempsPreparationElement.textContent = `⏰ Temps de préparation: ${recette.temp
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td>${ingredient.nom}</td>
-      <td>${ingredient.quantite}</td>
       <td>${ingredient.quantite_equivalente}</td>
+      <td>${ingredient.quantite}</td>
     `;
     ingredientsTable.appendChild(tr);
   });
@@ -109,3 +108,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+//////////////////////////////////////////////////
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+  
+    const accueilElement = document.getElementById('choripan');
+   accueilElement.addEventListener('click', () => {
+    window.location.href = `./RecettePrincipale.html?`;
+    });
+  });
+  
