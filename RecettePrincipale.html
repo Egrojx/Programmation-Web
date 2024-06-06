@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="./normalize.css">
     <link rel="stylesheet" href="./Recette.css">
+    <script src="data.js" ></script>
+    <script src="script.js" ></script>
     
 </head>
 <body>
@@ -18,7 +20,7 @@
             <section class="filtres2">
                 <label for="filtres">Les types de cuisine:</label>
 
-                <select name="filtres" id="filtres">
+                <select name="filtres" id="type-cuisine">
                     <option value="">Tous</option>
                     <option value="type">Argentine</option>
                     <option value="temps">Italie</option>
@@ -27,7 +29,7 @@
             </section>
             <section>
                 <label for="filtre2">Type de plats:</label>
-                <select>
+                <select id="type-plat">
                     <option value="">Tous</option>
                     <option value="type1">Plat principal</option>
                     <option value="type2">desserts</option>
@@ -39,21 +41,21 @@
 
 
 
-    <main class="conteneur-flex principal2">
+    <main class="conteneur-flex principal2 " id="principal-container">
         
-        <div class="description-plat">
-            <img src="images/argentinian-choripan-109514-1.jpeg" alt="image de la recette">
+        <div class="description-plat" id="desc-courte">
+            <img src="images/argentinian-choripan-109514-1.jpeg" alt="image de la recette" id="image_url">
             <div class="recepie-details">
-                <h2 class="titrePlat">Choripan argentinian</h2>
-                <p>&#x1F374;Type de plat: Plat principal</p>
-                <p>&#x1F354;Type de cuisine: Argentine</p>
-                <p>⏰Temps de préparation: 30 minutes</p>
+                <h2 class="titrePlat" id="titre">Choripan argentinian</h2>
+                <p id="type_de_plat">&#x1F374;Type de plat: Plat principal</p>
+                <p id="type_de_cuisine">&#x1F354;Type de cuisine: Argentine</p>
+                <p id="temps_de_preparation">⏰Temps de préparation: 30 minutes</p>
             </div>
         </div>
        
 
-        <table class="tableau2">
-            <h2 class="titrePlat" >Ingredients</h2>
+        <table class="tableau2" id="ingredients">
+            <h2>Ingredients</h2>
             <thead>
                 <tr>
                     <th>Nom Ingredient</th>
@@ -61,7 +63,7 @@
                     <th>Quantité(en g)</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="ingredient-table">
                 <tr>
                     <td>Persil</td>
                     <td></td>
@@ -106,8 +108,8 @@
             </tbody>
         </table>
         
-        <ol class="Etape">
-            <h2 class="titrePlat">Préparation</h2>
+        <ol class="Etape" id="etapes">
+            <h2 >Préparation</h2>
             <li>Piquez les chorizos avec les dents d’une fourchette.
                 Faites-les cuire au grill ou à la plancha en les retournant 
                 régulièrement. Pendant ce temps, mixez tous les ingrédients
