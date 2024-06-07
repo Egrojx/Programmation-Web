@@ -1,0 +1,112 @@
+html{
+    /*font-size: 62.5%;*/
+}
+.conteneur-grid{
+    display: grid;
+    grid-template: 5rem 10rem auto 1fr/ 1fr 1fr 1fr ;
+    grid-template-areas: 
+    "entete2     entete2     entete2"
+    "filtres2    filtres2     filtres2"
+    "principal2  principal2   principal2"
+    "pied       pied        pied    ";
+
+    justify-items: center;
+    align-items: center;
+    
+
+}
+
+body {
+    background-image: url('images/ecran.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.entete2{
+    grid-area: entete2;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(86, 7, 24);
+    color: rgb(255, 255, 255);
+    width:100%;
+}
+
+.navigation2{
+    grid-area: filtres2;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: rgb(155, 148, 149);
+    color: black;
+    padding: 0.5rem 0;
+    margin-bottom: 8rem;
+}
+
+.principal2{
+    grid-area: principal2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items:end;
+    width: 100%;  
+    
+}
+
+.pied{
+    grid-area: pied;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(86, 7, 24);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 10px;
+}
+
+h2{
+    color: rgb(92, 11, 11);
+}
+
+
+
+.recette{
+    flex-basis: 10rem;
+}
+
+article{
+    margin-top: 1rem;
+    margin-right: 1rem;
+    width: 200px;
+    margin-right: 90px;
+}
+
+.recette{
+    background-color: #f5efef; 
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    max-width: 600px; 
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    margin-top: 12px auto; 
+    border: 2px solid #514f4f;
+    border-radius: 10px;
+}
+
+.recette image {
+    max-width: 100%; 
+    display: block; 
+    margin-bottom: 10px; 
+}
+
+
+.lesImages{
+    width: 10rem;
+    height: 5rem;
+    border: 5px solid black;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(21, 101, 86, 0.2);
+    border-radius: 10px;
+
+}
+
