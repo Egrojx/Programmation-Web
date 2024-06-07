@@ -159,14 +159,14 @@ article{
 
 .recette{
     background-color: #f5efef; 
-    padding: 20px; 
+    padding: 30px; 
     border: 1px solid #ccc; 
-    max-width: 600px; 
+    max-width: 400px; 
     margin-left: 20px;
     margin-bottom: 10px;
     margin-right: 0px;
     margin-top: 12px auto; 
-    border: 2px solid #514f4f;
+    border: 2px solid #413d3d;
     border-radius: 10px;
 }
 
@@ -182,9 +182,9 @@ img {
     margin-right: 20px;
     box-shadow: 0 4px 8px rgba(0, 11, 9, 0.2);
     border-radius: 10px;
-    width: 36rem; /* Définissez la largeur souhaitée */
-    height: 26rem; /* Définissez la hauteur souhaitée */
-    object-fit: cover; /* Cette propriété permet de redimensionner l'image tout en conservant son ratio */
+    width: 26rem; 
+    height: 15rem; 
+    object-fit: cover; 
   }
 
 
