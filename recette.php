@@ -73,94 +73,6 @@ $result_etapes = $stmt_etapes->get_result();
                     <p id="temps_de_preparation"><?= $recette['temps_preparation'] ?></p>
                 </div>
             </div>
-<<<<<<< Updated upstream
-        </div>
-       
-
-        <table class="tableau2" id="ingredients">
-            <h2>Ingredients</h2>
-            <thead>
-                <tr>
-                    <th>Nom Ingredient</th>
-                    <th>Quantité(en tasses/cuillère)</th>
-                    <th>Quantité(en g)</th>
-                </tr>
-            </thead>
-            <tbody id="ingredient-table">
-                <tr>
-                    <td>Persil</td>
-                    <td></td>
-                    <td>0.120g</td>
-                </tr>
-                <tr>
-                    <td>Ail</td>
-                    <td></td>
-                    <td>16g</td>
-                </tr>
-                <tr>
-                    <td>Sel</td>
-                    <td>1 cuillere</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Oignon</td>
-                    <td></td>
-                    <td>100g</td>
-                </tr>
-                <tr>
-                    <td>Tomate</td>
-                    <td></td>
-                    <td>200g</td>
-                </tr>
-                <tr>
-                    <td>Huile d'olive</td>
-                    <td>2 cuilleres</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Baguette</td>
-                    <td></td>
-                    <td>600g</td>
-                </tr>
-                <tr>
-                    <td>Chorizo</td>
-                    <td></td>
-                    <td>600g</td>
-                </tr>
-                
-            </tbody>
-        </table>
-        
-        <ol class="Etape" id="etapes">
-            <h2 >Préparation</h2>
-            <li>Piquez les chorizos avec les dents d’une fourchette.
-                Faites-les cuire au grill ou à la plancha en les retournant 
-                régulièrement. Pendant ce temps, mixez tous les ingrédients
-                de la sauce chimichurri.
-            </li>
-            <li>
-                Lavez et découpez les légumes en petits dés (tomates, poivron, 
-                oignon), mélangez-les avec le gros sel, l’ail pressé, le persil
-                haché et l’huile d’olive.
-            </li>
-            <li>
-                Coupez la baguette en 4. Réchauffez les morceaux de baguette au 
-                four. Ouvrez dans le sens de la longueur. Nappez de sauce 
-                chimichurri, déposez la moitié d’un chorizo grillé par morceau 
-                de baguette. Recouvrez de sauce salsa criolla avant de refermer 
-                les sandwiches.
-            </li>
-        </ol>
-    </main>
-
-    <footer class="conteneur-flex pied">
-        <p>© Recette de cuisine. Tous droits réservés Jorge Yepes, Sara 
-            Yousuf
-        </p>
-    
-    </footer>
-</div>
-=======
             <table class="tableau2" id="ingredients">
                 <thead>
                     <tr>
@@ -200,7 +112,6 @@ $result_etapes = $stmt_etapes->get_result();
             <p>© Recette de cuisine. Tous droits réservés Jorge Yepes, Sara Yousuf</p>
         </footer>
     </div>
->>>>>>> Stashed changes
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
