@@ -55,7 +55,7 @@
        
 
         <table class="tableau2" id="ingredients">
-            <h2 class="titrePlat" >Ingredients</h2>
+            <h2>Ingredients</h2>
             <thead>
                 <tr>
                     <th>Nom Ingredient</th>
@@ -109,7 +109,7 @@
         </table>
         
         <ol class="Etape" id="etapes">
-            <h2 class="titrePlat">Préparation</h2>
+            <h2 >Préparation</h2>
             <li>Piquez les chorizos avec les dents d’une fourchette.
                 Faites-les cuire au grill ou à la plancha en les retournant 
                 régulièrement. Pendant ce temps, mixez tous les ingrédients
@@ -138,4 +138,21 @@
     </footer>
 </div>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  
+  const url = new URL(window.location.href);
+
+ 
+  const recetteId = url.searchParams.get('id');
+
+  
+  const recetteAfficher = recettes.find(recette => recette.id == recetteId);
+
+  
+  if (recetteAfficher) {
+    afficher_recette(recetteAfficher, types_cuisines, types_plats);
+  }
+});
+</script>
 </html>
