@@ -1,3 +1,4 @@
+
 function afficher_resume_recette(recette) {
   
   const recetteDiv = document.createElement('div');
@@ -36,9 +37,7 @@ function afficher_toutes_recettes(recettes) {
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  afficher_toutes_recettes(recettes);
-});
+
 
 
 ///////////////////////////////////////////////////////
@@ -58,22 +57,57 @@ function afficher_recette(recette, types_cuisines, types_plats) {
   
   titreElement.textContent = recette.titre;
   imageElement.src = recette.image_url;
-  typePlatElement.innerHTML = `&#x1F374; Type de plat: ${types_plats[recette.type_de_plat-1].nom}`;
-  typeCuisineElement.innerHTML = `&#x1F354; Type de cuisine: ${types_cuisines[recette.type_de_cuisine-1].nom}`;
+
+
+  const typePlat = types_plats.find(type_plat => type_plat.id === recette.id);
+  const typeCuisine= types_cuisines.find(type_cuisine => type_cuisine.id === recette.id);
+
+  if (typePlat) {
+    typePlatElement.innerHTML = `&#x1F374; Type de plat: ${typePlat.nom}`;
+  }
+
+  if(typeCuisine){
+    typeCuisineElement.innerHTML = `&#x1F354; Type de cuisine: ${typeCuisine.nom}`;
+  }
+
+ 
 
 tempsPreparationElement.textContent = `⏰ Temps de préparation: ${recette.temps_de_preparation}`;
  
 
-  ingredientsTable.innerHTML = '';
-  recette.ingredients.forEach(ingredient => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td>${ingredient.nom}</td>
-      <td>${ingredient.quantite_equivalente}</td>
-      <td>${ingredient.quantite}</td>
-    `;
-    ingredientsTable.appendChild(tr);
-  });
+
+// Efface le contenu de la table
+ingredientsTable.innerHTML = '';
+
+// Crée un fragment de document pour éviter les manipulations répétées du DOM
+const fragment = document.createDocumentFragment();
+
+// Parcours des ingrédients et création des lignes
+recette.ingredients.forEach(ingredient => {
+  const tr = document.createElement('tr');
+
+  // Crée les cellules de la ligne et ajoute le texte directement
+  const tdNom = document.createElement('td');
+  tdNom.textContent = ingredient.nom;
+
+  const tdQuantiteEquivalente = document.createElement('td');
+  tdQuantiteEquivalente.textContent = ingredient.quantite_equivalente;
+
+  const tdQuantite = document.createElement('td');
+  tdQuantite.textContent = ingredient.quantite;
+
+  // Ajoute les cellules à la ligne
+  tr.appendChild(tdNom);
+  tr.appendChild(tdQuantiteEquivalente);
+  tr.appendChild(tdQuantite);
+
+  // Ajoute la ligne au fragment
+  fragment.appendChild(tr);
+});
+
+// Ajoute le fragment à la table en une seule opération
+ingredientsTable.appendChild(fragment);
+
 
   
   etapesList.innerHTML = '';
@@ -91,31 +125,3 @@ tempsPreparationElement.textContent = `⏰ Temps de préparation: ${recette.temp
 }
 
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  
-  const url = new URL(window.location.href);
-
- 
-  const recetteId = url.searchParams.get('id');
-
-  
-  const recetteAfficher = recettes.find(recette => recette.id == recetteId);
-
-  
-  if (recetteAfficher) {
-    afficher_recette(recetteAfficher, types_cuisines, types_plats);
-  }
-});
-
-//////////////////////////////////////////////////
-
-
-  document.addEventListener('DOMContentLoaded', () => {
-  
-    const accueilElement = document.getElementById('choripan');
-   accueilElement.addEventListener('click', () => {
-    window.location.href = `./RecettePrincipale.html?`;
-    });
-  });
-  
