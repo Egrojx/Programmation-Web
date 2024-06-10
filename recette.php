@@ -1,56 +1,79 @@
+<?php
+include 'config.php';
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit();
+}
+$types_plats = liste_types_plats($conn);
+$types_cuisines = liste_types_cuisines($conn);
+
+$id_recette = $_GET['id'];
+$sql = "SELECT * FROM Recette WHERE id_recette=?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $id_recette);
+$stmt->execute();
+$result = $stmt->get_result();
+$recette = $result->fetch_assoc();
+
+$sql_ingredients = "SELECT * FROM Ingredient INNER JOIN Quantite ON Ingredient.id_ingredient = Quantite.id_ingredient WHERE Quantite.id_recette=?";
+$stmt_ingredients = $conn->prepare($sql_ingredients);
+$stmt_ingredients->bind_param("i", $id_recette);
+$stmt_ingredients->execute();
+$result_ingredients = $stmt_ingredients->get_result();
+
+$sql_etapes = "SELECT * FROM Etape WHERE id_recette=? ORDER BY numero_etape";
+$stmt_etapes = $conn->prepare($sql_etapes);
+$stmt_etapes->bind_param("i", $id_recette);
+$stmt_etapes->execute();
+$result_etapes = $stmt_etapes->get_result();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./normalize.css">
-    <link rel="stylesheet" href="./Recette.css">
-    <script src="data.js" ></script>
-    <script src="script.js" ></script>
-    
+    <title>Détails de la Recette</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="Recette.css">
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="conteneur-grid">
         <header class="conteneur-flex entete2">
             <h1>Mon Site de Recettes</h1>
         </header>
-
         <nav class="conteneur-flex navigation2">
             <section class="filtres2">
-                <label for="filtres">Les types de cuisine:</label>
-
-                <select name="filtres" id="type-cuisine">
+                <label for="type-cuisine">Les types de cuisine :</label>
+                <select id="type-cuisine">
                     <option value="">Tous</option>
-                    <option value="type">Argentine</option>
-                    <option value="temps">Italie</option>
-                    <option value="ingredients">Thailande</option>
+                    <?php foreach($types_cuisines as $type): ?>
+                        <option value="<?= $type['id_type_cuisine'] ?>"><?= $type['nom_type_cuisine'] ?></option>
+                    <?php endforeach; ?>
                 </select>
             </section>
             <section>
-                <label for="filtre2">Type de plats:</label>
+                <label for="type-plat">Type de plats :</label>
                 <select id="type-plat">
                     <option value="">Tous</option>
-                    <option value="type1">Plat principal</option>
-                    <option value="type2">desserts</option>
-                    <option value="type3">Entree</option>
+                    <?php foreach($types_plats as $type): ?>
+                        <option value="<?= $type['id_type_plat'] ?>"><?= $type['nom_type_plat'] ?></option>
+                    <?php endforeach; ?>
                 </select>
             </section>
         </nav>
-    </div>
-
-
-
-    <main class="conteneur-flex principal2 " id="principal-container">
-        
-        <div class="description-plat" id="desc-courte">
-            <img src="images/argentinian-choripan-109514-1.jpeg" alt="image de la recette" id="image_url">
-            <div class="recepie-details">
-                <h2 class="titrePlat" id="titre">Choripan argentinian</h2>
-                <p id="type_de_plat">&#x1F374;Type de plat: Plat principal</p>
-                <p id="type_de_cuisine">&#x1F354;Type de cuisine: Argentine</p>
-                <p id="temps_de_preparation">⏰Temps de préparation: 30 minutes</p>
+        <main class="conteneur-flex principal2" id="principal-container">
+            <div class="description-plat">
+                <img src="<?= $recette['image_url'] ?>" alt="image de la recette" id="image_url">
+                <div class="recepie-details">
+                    <h2 class="titrePlat" id="titre"><?= $recette['titre'] ?></h2>
+                    <p id="type_de_plat"><?= $recette['id_type_plat'] ?></p>
+                    <p id="type_de_cuisine"><?= $recette['id_type_cuisine'] ?></p>
+                    <p id="temps_de_preparation"><?= $recette['temps_preparation'] ?></p>
+                </div>
             </div>
+<<<<<<< Updated upstream
         </div>
        
 
@@ -137,6 +160,47 @@
     
     </footer>
 </div>
+=======
+            <table class="tableau2" id="ingredients">
+                <thead>
+                    <tr>
+                        <th>Nom Ingredient</th>
+                        <th>Quantité(en tasses/cuillère)</th>
+                        <th>Quantité(en g)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while($ingredient = $result_ingredients->fetch_assoc()): ?>
+                        <tr>
+                            <td><?= $ingredient['nom'] ?></td>
+                            <td><?= $ingredient['quantite_tasse_cuillere'] ?></td>
+                            <td><?= $ingredient['quantite_grammes'] ?></td>
+                        </tr>
+                    <?php endwhile; ?>
+                </tbody>
+            </table>
+            <table class="tableau2" id="etapes">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while($etape = $result_etapes->fetch_assoc()): ?>
+                        <tr>
+                            <td><?= $etape['numero_etape'] ?></td>
+                            <td><?= $etape['description'] ?></td>
+                        </tr>
+                    <?php endwhile; ?>
+                </tbody>
+            </table>
+        </main>
+        <footer class="conteneur-flex pied">
+            <p>© Recette de cuisine. Tous droits réservés Jorge Yepes, Sara Yousuf</p>
+        </footer>
+    </div>
+>>>>>>> Stashed changes
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -156,3 +220,6 @@
 });
 </script>
 </html>
+
+
+
