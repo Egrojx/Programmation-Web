@@ -85,4 +85,17 @@
         </footer>
     </div>
 </body>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  afficher_toutes_recettes(recettes);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  
+  const accueilElement = document.getElementById('choripan');
+ accueilElement.addEventListener('click', () => {
+  window.location.href = `./RecettePrincipale.html?`;
+  });
+});
+</script>
 </html>
