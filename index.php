@@ -1,48 +1,55 @@
 <?php
-include 'config.php';
-if (!isset($_SESSION['user'])) {
-    header("Location: login.php");
-    exit();
+
+require 'config.php';
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
 }
-$types_plats = liste_types_plats($conn);
-$types_cuisines = liste_types_cuisines($conn);
+
+
+$types_plats = liste_types_plats($pdo);
+$types_cuisines = liste_types_cuisines($pdo);
 ?>
+
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site de Recettes</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="Recette.css">
-    <script src="data.js" defer></script>
-    <script src="script.js" defer></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/Recette.css">
+    <script src="js/data.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <div class="conteneur-grid">
         <header class="conteneur-flex entete2">
             <h1>Mon Site de Recettes</h1>
         </header>
+
         <nav class="conteneur-flex navigation2">
             <section class="filtres2">
-                <label for="type-cuisine">Les types de cuisine :</label>
-                <select id="type-cuisine">
-                    <option value="">Tous</option>
-                    <?php foreach($types_cuisines as $type): ?>
-                        <option value="<?= $type['id_type_cuisine'] ?>"><?= $type['nom_type_cuisine'] ?></option>
+                <label for="filtres">Les types de cuisine:</label>
+                <select name="filtres" id="type-cuisine">
+                    <?php foreach ($types_cuisines as $cuisine): ?>
+                        <option value="">Tous</option>
+                        <option value="<?= $cuisine['id'] ?>"><?= $cuisine['nom'] ?></option>
                     <?php endforeach; ?>
                 </select>
             </section>
             <section>
-                <label for="type-plat">Type de plats :</label>
+                <label for="filtre2">Type de plats:</label>
                 <select id="type-plat">
                     <option value="">Tous</option>
-                    <?php foreach($types_plats as $type): ?>
-                        <option value="<?= $type['id_type_plat'] ?>"><?= $type['nom_type_plat'] ?></option>
+                    <?php foreach ($types_plats as $type): ?>
+                        <option value="<?= $type['id'] ?>"><?= $type['nom'] ?></option>
                     <?php endforeach; ?>
                 </select>
             </section>
         </nav>
+
         <main class="conteneur-flex principal2" id="recette-container">
                 <article class="recette recetteA" id="choripan">
                     <img class="lesImages" src="images/argentinian-choripan-109514-1.jpeg" class="img" >
@@ -71,9 +78,14 @@ $types_cuisines = liste_types_cuisines($conn);
                         véritable voyage en Thaïlande!
                     </p>
                 </article>
+            
+
         </main>
+
         <footer class="conteneur-flex pied">
-            <p>© Recette de cuisine. Tous droits réservés Jorge Yepes, Sara Yousuf</p>
+            <p>© Recette de cuisine. Tous droits réservés Jorge Yepes, Sara 
+                Yousuf
+            </p>
         </footer>
     </div>
 </body>
@@ -86,11 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const accueilElement = document.getElementById('choripan');
  accueilElement.addEventListener('click', () => {
-  window.location.href = `./RecettePrincipale.html?`;
+  window.location.href = `./recette.php?`;
   });
 });
 </script>
 </html>
-
 
 
