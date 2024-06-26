@@ -187,6 +187,9 @@ img {
     object-fit: cover; 
   }
 
+  erreur{
+    color: red;
+  }
 
 
 
