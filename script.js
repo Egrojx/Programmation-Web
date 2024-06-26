@@ -45,7 +45,6 @@ function afficher_toutes_recettes(recettes) {
 
 
 function afficher_recette(recette, types_cuisines, types_plats) {
-  
   const titreElement = document.querySelector('.titrePlat');
   const imageElement = document.querySelector('#image_url');
   const typePlatElement = document.querySelector('#type_de_plat');
@@ -54,74 +53,71 @@ function afficher_recette(recette, types_cuisines, types_plats) {
   const ingredientsTable = document.querySelector('#ingredient-table');
   const etapesList = document.querySelector('.Etape');
 
-  
   titreElement.textContent = recette.titre;
   imageElement.src = recette.image_url;
 
-
-  const typePlat = types_plats.find(type_plat => type_plat.id === recette.id);
-  const typeCuisine= types_cuisines.find(type_cuisine => type_cuisine.id === recette.id);
+  const typePlat = types_plats.find(type_plat => type_plat.id === recette.id_type_plat);
+  const typeCuisine = types_cuisines.find(type_cuisine => type_cuisine.id === recette.id_type_cuisine);
 
   if (typePlat) {
     typePlatElement.innerHTML = `&#x1F374; Type de plat: ${typePlat.nom}`;
   }
 
-  if(typeCuisine){
+  if (typeCuisine) {
     typeCuisineElement.innerHTML = `&#x1F354; Type de cuisine: ${typeCuisine.nom}`;
   }
 
- 
+  tempsPreparationElement.textContent = `⏰ Temps de préparation: ${recette.temps_de_preparation} minutes`;
 
-tempsPreparationElement.textContent = `⏰ Temps de préparation: ${recette.temps_de_preparation}`;
- 
+  ingredientsTable.innerHTML = '';
 
+  const fragment = document.createDocumentFragment();
 
-// Efface le contenu de la table
-ingredientsTable.innerHTML = '';
+  recette.ingredients.forEach(ingredient => {
+    const tr = document.createElement('tr');
 
-// Crée un fragment de document pour éviter les manipulations répétées du DOM
-const fragment = document.createDocumentFragment();
+    const tdNom = document.createElement('td');
+    tdNom.textContent = ingredient.nom;
 
-// Parcours des ingrédients et création des lignes
-recette.ingredients.forEach(ingredient => {
-  const tr = document.createElement('tr');
+    const tdQuantiteEquivalente = document.createElement('td');
+    tdQuantiteEquivalente.textContent = ingredient.quantite_equivalente;
 
-  // Crée les cellules de la ligne et ajoute le texte directement
-  const tdNom = document.createElement('td');
-  tdNom.textContent = ingredient.nom;
-
-  const tdQuantiteEquivalente = document.createElement('td');
-  tdQuantiteEquivalente.textContent = ingredient.quantite_equivalente;
-
-  const tdQuantite = document.createElement('td');
-  tdQuantite.textContent = ingredient.quantite;
-
-  // Ajoute les cellules à la ligne
-  tr.appendChild(tdNom);
-  tr.appendChild(tdQuantiteEquivalente);
-  tr.appendChild(tdQuantite);
-
-  // Ajoute la ligne au fragment
-  fragment.appendChild(tr);
-});
-
-// Ajoute le fragment à la table en une seule opération
-ingredientsTable.appendChild(fragment);
+    const tdQuantite = document.createElement('td');
+    tdQuantite.textContent = ingredient.quantite;
 
 
-  
+    tr.appendChild(tdNom);
+    tr.appendChild(tdQuantiteEquivalente);
+    tr.appendChild(tdQuantite);
+
+
+    fragment.appendChild(tr);
+  });
+
+  ingredientsTable.appendChild(fragment);
+
   etapesList.innerHTML = '';
 
+
   const h2 = document.createElement('h2');
-    h2.textContent = "Préparation";
-    etapesList.appendChild(h2);
+  h2.textContent = "Préparation";
+  etapesList.appendChild(h2);
+
 
   recette.etapes_de_preparation.forEach(etape => {
-    
     const li = document.createElement('li');
     li.textContent = etape;
     etapesList.appendChild(li);
   });
+
+  fetch('/api/recettes/1') // Remplacez par l'URL correcte de votre API pour obtenir une recette spécifique
+  .then(response => response.json())
+  .then(data => {
+    const recette = data.recette;
+    const types_cuisines = data.types_cuisines;
+    const types_plats = data.types_plats;
+    afficher_recette(recette, types_cuisines, types_plats);
+  })
+  .catch(error => console.error('Erreur lors de la récupération des données:', error));
+
 }
-
-
