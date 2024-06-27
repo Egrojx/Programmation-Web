@@ -1,17 +1,14 @@
 <?php
-
-require 'config.php';
+require_once 'config.php';
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit;
 }
 
-
 $types_plats = liste_types_plats($pdo);
 $types_cuisines = liste_types_cuisines($pdo);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,14 +18,13 @@ $types_cuisines = liste_types_cuisines($pdo);
     <title>Document</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/Recette.css">
-    <script src="js/data.js" ></script>
+    
     <script src="js/script.js" ></script>
 
     <?php
     $options_plats = liste_types_plats($pdo);
     $options_cuisines = liste_types_cuisines($pdo);
     ?>
-    
 </head>
 <body>
     <div class="conteneur-grid">
@@ -39,7 +35,6 @@ $types_cuisines = liste_types_cuisines($pdo);
         <nav class="conteneur-flex navigation2">
             <section class="filtres2">
                 <label for="filtres">Les types de cuisine:</label>
-
                 <select name="filtres" id="type-cuisine">
                     <option value="">Tous</option>
                     <?php foreach ($types_cuisines as $cuisine): ?>
@@ -59,10 +54,7 @@ $types_cuisines = liste_types_cuisines($pdo);
         </nav>
     </div>
 
-
-
     <main class="conteneur-flex principal2 " id="principal-container">
-        
         <div class="description-plat" id="desc-courte">
             <img src="../images/argentinian-choripan-109514-1.jpeg" alt="image de la recette" id="image_url">
             <div class="recepie-details">
@@ -72,7 +64,6 @@ $types_cuisines = liste_types_cuisines($pdo);
                 <p id="temps_de_preparation">⏰Temps de préparation: 30 minutes</p>
             </div>
         </div>
-       
 
         <table class="tableau2" id="ingredients">
             <h2>Ingredients</h2>
@@ -124,58 +115,36 @@ $types_cuisines = liste_types_cuisines($pdo);
                     <td></td>
                     <td>600g</td>
                 </tr>
-                
             </tbody>
         </table>
-        
+
         <ol class="Etape" id="etapes">
-            <h2 >Préparation</h2>
-            <li>Piquez les chorizos avec les dents d’une fourchette.
-                Faites-les cuire au grill ou à la plancha en les retournant 
-                régulièrement. Pendant ce temps, mixez tous les ingrédients
-                de la sauce chimichurri.
-            </li>
-            <li>
-                Lavez et découpez les légumes en petits dés (tomates, poivron, 
-                oignon), mélangez-les avec le gros sel, l’ail pressé, le persil
-                haché et l’huile d’olive.
-            </li>
-            <li>
-                Coupez la baguette en 4. Réchauffez les morceaux de baguette au 
-                four. Ouvrez dans le sens de la longueur. Nappez de sauce 
-                chimichurri, déposez la moitié d’un chorizo grillé par morceau 
-                de baguette. Recouvrez de sauce salsa criolla avant de refermer 
-                les sandwiches.
-            </li>
+            <h2>Préparation</h2>
+            <li>Piquez les chorizos avec les dents d’une fourchette. Faites-les cuire au grill ou à la plancha en les retournant régulièrement. Pendant ce temps, mixez tous les ingrédients de la sauce chimichurri.</li>
+            <li>Lavez et découpez les légumes en petits dés (tomates, poivron, oignon), mélangez-les avec le gros sel, l’ail pressé, le persil haché et l’huile d’olive.</li>
+            <li>Coupez la baguette en 4. Réchauffez les morceaux de baguette au four. Ouvrez dans le sens de la longueur. Nappez de sauce chimichurri, déposez la moitié d’un chorizo grillé par morceau de baguette. Recouvrez de sauce salsa criolla avant de refermer les sandwiches.</li>
         </ol>
     </main>
 
     <footer class="conteneur-flex pied">
-        <p>© Recette de cuisine. Tous droits réservés Jorge Yepes, Sara 
-            Yousuf
-        </p>
-    
+        <p>© Recette de cuisine. Tous droits réservés Jorge Yepes, Sara Yousuf</p>
     </footer>
 </div>
-</body>
+
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-  
-  const url = new URL(window.location.href);
+document.addEventListener('DOMContentLoaded', async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const recetteId = urlParams.get('id');
 
- 
-  const recetteId = url.searchParams.get('id');
-
-  
-  const recetteAfficher = recettes.find(recette => recette.id == recetteId);
-
-  
-  if (recetteAfficher) {
-    afficher_recette(recetteAfficher, types_cuisines, types_plats);
-  }
+    if (recetteId) {
+        
+        const response = await fetch(`/api/recettes/${recetteId}`);
+           
+        const recette = await response.json();
+        afficher_recette(recette, <?= json_encode($types_cuisines) ?>, <?= json_encode($types_plats) ?>); 
+        
+    }
 });
 </script>
+</body>
 </html>
-
-
-
