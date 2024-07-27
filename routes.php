@@ -2,7 +2,7 @@
 
 require_once 'config.php';
 require_once 'router.php';
-require_once 'recette_fonctions.php';
+require_once 'api/recette_fonctions.php';
 
 get('/', function() {
     include 'index.php';
